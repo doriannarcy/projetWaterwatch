@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Leaflet.markercluster-1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="./Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css">
+</head>
+<body>
+    <div id="container">
+        <div id="map" class="bloc"></div>
+        <div id="desc" class="bloc">
+            <strong>Qu'est ce que c'est ?</strong><br>
+            Ce projet vise à mieux caractériser les ressources en eau du territoire en analysant la qualité de l’eau et le débit des petits ruisseaux. 
+            Pourquoi ? Parce que les petits ruisseaux font les grandes rivières !
+            Et la qualité de l’eau de nos ruisseaux contribue à une eau de qualité dans toutes nos rivières et à notre robinet.<p>&nbsp;</p> 
+            
+            <strong>Deux façons de participer à ce projet (au choix):</strong><br>
+                - Se procurer une mallette auprès de l’association de la Vigie de l’Eau et s’engager à analyser un même ruisseau une fois par mois</li><br>
+                - Se procurer un kit de prélèvement et l’envoyer au laboratoire pour analyse !</li>
+        </div>
+
+        <!-- The right bloc will contain the buttons and the forms -->
+        <!-- <div id="buttonsContainer" class="bloc"></div> -->
+        <div id="inputForm" class="bloc">
+            <form action="">
+                <label>Utilisateur:</label>                     <input type="text" required="required" placeholder="Nom de l'utilisateur..." name="user"/><br>
+                <label>Nom ruisseau (Optionnel):</label>        <input type="text" placeholder="Nom du cours d'eau..." name="name"/><br>
+                <label>Identifiant Point:</label>               <input type="text" required="required" placeholder="Identifiant du point..." name="identifiant"/><br>
+                <label>Latitude:</label>                        <input type="number" min="-90" max="90" step="0.0000000001" required="required" placeholder="Ex: 46.34689" name="latitude"/><br>
+                <label>Longitude:</label>                       <input type="number" min="-180" max="180" step="0.0000000001" required="required" placeholder="Ex: 2.323453" name="longitude"/><br>
+                <label>Température moyenne:</label>             <input type="number" min="-5" max="35" required="required" placeholder="Ex: 7"name="tempMoy"/><br>
+                <label>PH Moyen (Sonde):</label>                <input type="number" min="0" max="14" required="required" placeholder="Ex: 4" name="phMoy"/><br>
+                <label>PH Bandelette:</label>                   <input type="number" min="0" max="14" required="required" placeholder="Ex: 6" name="phBand"/><br>
+                <label>PH Moyen MV (Sonde):</label>             <input type="number" min="0" max="3000" required="required" placeholder="Ex: 7" name="phMoyMv"/><br>
+                <label>Conductivité moyenne (µS/cm):</label>    <input type="number" required="required" placeholder="Ex: 2000"name="conduMoy"/><br>
+                <label>Conductivité moyenne (mV):</label>       <input type="number" required="required" placeholder="Ex: 1500" name="conduMoyMv"/><br>
+                <label>Turbidité moyenne (NTU):</label>         <input type="number" required="required" placeholder="Ex: 500" name="turbMoyNTU"/><br>
+                <label>Turbidité moyenne (mV):</label>          <input type="number" required="required" placeholder="Ex: 2000" name="turbMoyMv"/><br>
+                <label>Profondeur (cm):</label>                 <input type="number" min="1" max="300" required="required" placeholder="Ex: 200" name="profondeur"/><br>
+                <label>Concentration Nitrates (mg/L):</label>   <input type="number" min="0" max="50" required="required" placeholder="Ex: 30" name="conNitra"/><br>
+                <label>Concentration Nitrites (mg/L):</label>   <input type="number" min="0" max="3" required="required" placeholder="Ex: 2" name="conNitri"/><br>
+                <label>Interprétation Débit:</label>            <input type="text" required="required" placeholder="Votre interpretation ici..." name="debitInter"/><br>
+                <label>État mesuré:</label>                     <input type="text" required="required" placeholder="Texte ici..." name="etatMesure"/><br>
+                <label>Observations (Optionnel):</label>
+                <textarea rows="4" cols="35" name="observations" placeholder="Vos observations, juste ici..."></textarea><br>
+                
+                <button type="submit">Sauvegarder</button><button type="reset">Reset</button><button type="button">Fermer</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+    <script src="./Leaflet.markercluster-1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="./map.js"></script>
+    <script src="./buttons.js"></script>
+</body>
+</html>

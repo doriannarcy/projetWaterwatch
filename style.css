@@ -1,0 +1,87 @@
+:root
+{
+    --backgroundColor: gainsboro;
+}
+
+html
+{
+    font-family: 'Open Sans';
+}
+
+body
+{
+    background-color: #242424;
+}
+
+#container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 80vh;
+}
+
+.bloc
+{
+    width: auto;
+    height: auto;
+    border-color: blue;
+    border-width: 3px;
+    border-style: solid;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--backgroundColor);
+}
+
+#map
+{
+    grid-column: 1;
+}
+
+#desc
+{
+    grid-column: 2;
+    padding: 10px;
+}
+
+#inputForm
+{
+    grid-column: 3;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#inputForm input
+{
+    float: right;
+}
+
+#buttonsContainer
+{
+    grid-column: 3;
+    position: relative;
+}
+
+#buttons
+{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+}
+
+#buttons input
+{
+    border: 5px solid var(--backgroundColor);
+    width: 20vw;
+    height: 10vw;
+
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: white;
+    background-color: #09b9be;
+    cursor: pointer;
+}
