@@ -1,3 +1,4 @@
+// data to get from the api (markers position and information)
 const data = {
     "watcher_watch": [
         {
