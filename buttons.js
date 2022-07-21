@@ -26,14 +26,51 @@ const htmlInputForm = `<form action="">
     <label>Observations (Optionnel): </label>
     <textarea rows="4" cols="35" name="observations" placeholder="Vos observations, juste ici..."></textarea><br>
     
-    <button type="submit">Sauvegarder</button><button type="reset">Reset</button><button type="button">Fermer</button>
+    <button type="submit">Sauvegarder</button><button type="reset">Reset</button><button type="button" id="closeInputForm">Fermer</button>
 </form>`;
 
 document.getElementById("buttonsContainer").innerHTML = htmlButtons;
 
-// click on "FORMULAIRE DE SAISIE"
-document.getElementById("inputFormButton").onclick = () =>
+const setButtonsContainerButtons = () =>
 {
-    document.getElementById("buttonsContainer").innerHTML = htmlInputForm;
-    document.getElementById("buttonsContainer").id = "inputForm";
+    // click on "FORMULAIRE DE SAISIE"
+    document.getElementById("inputFormButton").onclick = () =>
+    {
+        document.getElementById("buttonsContainer").innerHTML = htmlInputForm;
+        document.getElementById("buttonsContainer").id = "inputForm";
+        setInputFormButtons();
+    }
+
+    // click on "INSERTION FICHIER"
+
+    // click on "RECHERCHE"
 }
+
+const setInputFormButtons = () =>
+{
+    // click on "Fermer"
+    document.getElementById("closeInputForm").onclick = () =>
+    {
+        document.getElementById("inputForm").innerHTML = htmlButtons;
+        document.getElementById("inputForm").id = "buttonsContainer";
+        setButtonsContainerButtons();
+    }
+
+    // click on "Reset"
+
+    // click on "Sauvegarder"
+}
+
+// const setInsertFileButtons = () =>
+// {
+    
+// }
+
+// const setSearchButtons = () =>
+// {
+    
+// }
+
+
+setButtonsContainerButtons();
+
